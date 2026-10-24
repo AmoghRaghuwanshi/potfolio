@@ -52,7 +52,7 @@ export function createStudio(container, {portrait,onSelect=()=>{}}={}) {
   const introTexture=new THREE.CanvasTexture(c);introTexture.colorSpace=THREE.SRGBColorSpace;
   const screen=new THREE.Mesh(new THREE.PlaneGeometry(3.04,1.8),new THREE.MeshBasicMaterial({map:introTexture}));screen.position.set(0,1.07,.081);lid.add(screen);
   const projectMaterial=new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false});const projectScreen=new THREE.Mesh(new THREE.PlaneGeometry(3.04,1.8),projectMaterial);projectScreen.position.set(0,1.07,.084);lid.add(projectScreen);
-  const loader=new THREE.TextureLoader();loader.load('/projects/agriconnect-screen.png',texture=>{texture.colorSpace=THREE.SRGBColorSpace;projectMaterial.map=texture;projectMaterial.needsUpdate=true;invalidate();},undefined,()=>{projectScreen.visible=false;});
+  const loader=new THREE.TextureLoader();loader.load(import.meta.env.BASE_URL + 'projects/agriconnect-screen.png',texture=>{texture.colorSpace=THREE.SRGBColorSpace;projectMaterial.map=texture;projectMaterial.needsUpdate=true;invalidate();},undefined,()=>{projectScreen.visible=false;});
   const cameraDot=new THREE.Mesh(new THREE.SphereGeometry(.017,8,8),dark);cameraDot.position.set(0,2.06,.08);lid.add(cameraDot);
   const notebook=new THREE.Group();notebook.position.set(-2.65,.04,.45);notebook.rotation.y=-.2;scene.add(notebook);
   box(1.25,.045,1.67,.035,linen,0,0,0,notebook);box(1.19,.11,1.58,.025,paper,.02,.077,0,notebook);box(1.25,.045,1.67,.035,linen,0,.15,0,notebook);box(.035,.012,1.66,.004,brass,.44,.179,0,notebook);

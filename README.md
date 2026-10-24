@@ -33,3 +33,8 @@ The portrait in `public/portraits/amogh-studio.png` was generated using the four
 Reference: https://www.instagram.com/reel/DeHrqz_o9g7/
 
 The reel capture is `reference/reel-frame.png`. This is a local adaptation, not a frame-perfect reproduction. The generated portrait and the four authorized enhancements are integrated. No public deployment has been made. See `reference/verification.md` for checks and screenshots.
+
+## Hosting and resume updates
+
+Build with npm run build and publish the dist directory using a static host. Asset and resume URLs are relative, so the site supports a domain root or a repository subdirectory. GitHub repository upload alone does not enable website hosting. To update the resume, replace public/Amogh_Raghuwanshi_Resume.pdf with the new PDF, keeping its filename, then rebuild and redeploy. All resume buttons use that same file.
+

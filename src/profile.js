@@ -8,8 +8,8 @@ export const profile = {
   email: 'amoghraghuwanshi@gmail.com',
   github: 'https://github.com/AmoghRaghuwanshi',
   linkedin: 'https://www.linkedin.com/in/amogh-raghuwanshi/',
-  resume: '/Amogh_Raghuwanshi_Resume.pdf',
-  portrait: '/portraits/amogh-studio.png',
+  resume: `${import.meta.env.BASE_URL}Amogh_Raghuwanshi_Resume.pdf`,
+  portrait: `${import.meta.env.BASE_URL}portraits/amogh-studio.png`,
   skills: ['C++', 'React', 'Next.js', 'TypeScript', 'AI integration', 'Git & GitHub'],
   achievements: [
     ['Top 6 / 90+ teams', 'National Level Ideathon 2K26'],
