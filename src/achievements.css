@@ -1,0 +1,10 @@
+.achievements{margin:30px 0 20px;border-top:1px solid #aeb99e}
+.achievement{padding:12px 0;border-bottom:1px solid #bfc7b4;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.achievement strong{font-size:12px;font-weight:550;white-space:nowrap}
+.achievement span{font-size:10px;color:#65705c;text-align:right}
+.about-copy,.project{min-width:0}
+@media(max-width:600px){
+  .about h2{font-size:clamp(44px,15.5vw,62px)}
+  .section-heading h2{font-size:clamp(40px,13vw,54px)}
+  .section-heading p{min-width:0;flex:1}
+}

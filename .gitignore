@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env*
+!public/portraits/.gitkeep
+
+# Local source photos and visual QA artifacts are not required by the site.
+Eleven Lab images/
+reference/*.png
+reference/*.jpg
+reference/*.jpeg
