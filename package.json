@@ -7,7 +7,7 @@
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "check": "node --check src/main.js && node --check src/desk-scene.js && node --test src/journey.test.js"
+    "check": "node --check src/main.js && node --check src/desk-scene.js && node --check netlify/functions/resume.mjs && node --test src/journey.test.js tests/resume-function.test.js"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.0",

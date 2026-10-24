@@ -38,3 +38,16 @@ The reel capture is `reference/reel-frame.png`. This is a local adaptation, not 
 
 Build with npm run build and publish the dist directory using a static host. Asset and resume URLs are relative, so the site supports a domain root or a repository subdirectory. GitHub repository upload alone does not enable website hosting. To update the resume, replace public/Amogh_Raghuwanshi_Resume.pdf with the new PDF, keeping its filename, then rebuild and redeploy. All resume buttons use that same file.
 
+## Netlify deployment
+
+Import `AmoghRaghuwanshi/potfolio` into Netlify and select the `main` branch. The root `netlify.toml` supplies the build command (`npm run check && npm run build`), publish directory (`dist`), Node version (`24`), and functions directory (`netlify/functions`). No environment variables or API keys are required.
+
+Use Git-connected builds so Netlify deploys both the site and the function. Uploading only `dist` manually will not include the function. Future pushes to the connected production branch can trigger new deployments.
+
+The website's resume buttons open `/Amogh_Raghuwanshi_Resume.pdf` directly. The Netlify-only endpoint `/api/resume` redirects GET and HEAD requests to the same PDF. The PDF is configured to open inline and revalidate its cache, so replacing it under the same filename does not require changing every link. Hashed JavaScript, CSS, and font assets use long-lived caching.
+
+The contact button opens the visitor's email app; there is no server-side email service to configure. The site uses hash navigation (`#work`, `#about`, `#contact`), so it does not need a catch-all rewrite that could mask missing PDF or image files.
+
+After deployment, check the homepage, the resume buttons, and `/api/resume` on the live Netlify URL. Local `npm run dev` serves the direct PDF, but does not execute Netlify Functions. `npm run check` validates the function handler and the included PDF locally.
+
+Configuration reference: https://docs.netlify.com/build/configure-builds/file-based-configuration/

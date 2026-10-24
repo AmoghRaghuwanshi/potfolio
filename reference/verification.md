@@ -28,3 +28,11 @@
 - `reference/studio-mobile.png`: narrow/mobile browser verification capture.
 - No public deployment has been made. This is a reel-inspired adaptation, not a verified frame-perfect reproduction.
 - Mobile checks used browser iframes; physical phone gestures were not tested. WebGL context-loss recovery was reviewed in code, not forced on the device.
+
+## Netlify preparation
+
+- netlify.toml parsed successfully with Python tomllib; publish and function paths exist.
+- All five checks pass, including GET/HEAD resume redirects, PDF signature verification, and rejected writes.
+- Production build succeeds and includes the resume PDF.
+- Handler tests ran locally on Node 20.19.0; Netlify is configured for Node 24.
+- Netlify deployment and live function execution have not been verified; repository preparation is complete.
